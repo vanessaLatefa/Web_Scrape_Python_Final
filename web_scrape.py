@@ -1,10 +1,19 @@
-import requests
-from bs4 import BeautifulSoup
+#Importing.. searches for the named module, 
+#creates a reference to that module in this namespace
+# Since we are importing,
+# we can access and make use of their libraries, 
+# which are a bunch of code designed by other people.
+
+import requests 
 import urllib.request
-from urllib.request import urlopen
-import time
-from termcolor import colored
 import os
+
+#Using this becuase I only want 
+# to import a specif module.
+
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+from termcolor import colored
 
 
 #Setting the url we want to scrape
