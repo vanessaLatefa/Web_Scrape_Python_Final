@@ -59,24 +59,27 @@ def chooseALink():
 #it will then match to the link's index
 #handling the error using a print method
 #when the enterd value doesnt match, the program asks again.
-
-    n = input(colored('                 Enter a number: ', color='magenta', on_color=None, attrs=['bold']))
-    if n == '1':
-        assign_link = assignment_url[0]
-        scrapeMe(assign_link) 
-    elif n == '2':
-        assign_link = assignment_url[1]
-        scrapeMe2(assign_link)
-    elif n == '3':
-        assign_link = assignment_url[2]
-        scrapeMe2(assign_link)
-    elif n == '4':
-        assign_link = assignment_url[3]
-        scrapeMe(assign_link)
-    else:
-        print()
-        print('     ///  The value entered cannot be found!   \\\\\\')
-        chooseALink()
+    while True:
+        try:
+            n = int(input(colored('                 Enter a number: ', color='magenta', on_color=None, attrs=['bold'])))
+        except ValueError as err:
+            print('     ///  The value entered cannot be found!   \\\\\\', err)
+            continue
+        if n == 1:
+            assign_link = assignment_url[0]
+            scrapeMe(assign_link) 
+        elif n == 2:
+            assign_link = assignment_url[1]
+            scrapeMe2(assign_link)
+        elif n == 3:
+            assign_link = assignment_url[2]
+            scrapeMe2(assign_link)
+        elif n == 4:
+            assign_link = assignment_url[3]
+            scrapeMe(assign_link)
+        else:
+            print()
+        
         
 
 def scrapeMe(assignLink):
