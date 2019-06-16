@@ -144,19 +144,12 @@ def scrapeMe2(assignLink):
         else:
             add_p = str(p.text) + '\n'
             add_to_file(add_p)
-           
-       
-        
-
 
 def add_to_file(text):
     #please append and write the text to a readme file.
     with open('file.md', 'a+') as f:
         f.write(text)
         
-       
-       
-
 def check_for_md_file():
     #check if the file exists, if yes, remove and create a new one.
     if os.path.exists('file.md'):
@@ -191,10 +184,7 @@ def main():
     on_color=None, attrs=['bold']))
     print()
     
-   
-    
-    
-    
+  
 
 if __name__ == "__main__":
     main()
