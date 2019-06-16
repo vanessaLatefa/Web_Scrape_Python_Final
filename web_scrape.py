@@ -15,14 +15,18 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from termcolor import colored
 
+#BeautifulSoup is a Python library 
+#for pulling data out of HTML and XML files
 
 #Setting the url we want to scrape
 scrape = 'https://clbokea.github.io/exam/index.html#menu'
 
-    #Connecting to the URL
+#Connecting to the URL 
+# #sends a get request to the server
 connection = requests.get(scrape)
 
-#parsing HTML and save it in a Beautifulsoup object
+#Specifying or parsing HTML 
+#save it in a Beautifulsoup object
 soup = BeautifulSoup(connection.text, "html.parser")
 assign_p = ""
 assign_title = ""
@@ -76,19 +80,18 @@ def chooseALink():
         
 
 def scrapeMe(assignLink):
-    #Connecting to the URL
+    #Connecting to the URL and requesting a get
     connection = requests.get(assignLink)
     #parsing HTML and save it in a Beautifulsoup object
     soup = BeautifulSoup(connection.text, "html.parser")
     find_h1 = soup.find('h1')
-    #adding the content to this variable including a new line to be readable
+    #adding the h1 to this variable including a new line to be readable
     assign_title = find_h1.text + '\n'
     add_to_file(assign_title.upper())
     find_all_p = soup.find_all('p')
     
     #if string is found, please pass
     #meaning ignore
-
     for p in find_all_p:
         if 'NOTE: This is a ' in p.text:
             pass
@@ -108,7 +111,7 @@ def scrapeMe2(assignLink):
     #parsing HTML and save it in a Beautifulsoup object
     soup = BeautifulSoup(connection.text, "html.parser")
     find_h1 = soup.find('h1')
-    assign_title = find_h1.text + '\n'     #adding the content to this variable including a new line to be readable
+    assign_title = find_h1.text + '\n' #adding the content to this variable including a new line to be readable
     
     add_to_file(assign_title.upper())
     find_all_li = soup.find_all('li')
@@ -147,7 +150,7 @@ def scrapeMe2(assignLink):
 
 
 def add_to_file(text):
-    #please append and write the tex to a readme file.
+    #please append and write the text to a readme file.
     with open('file.md', 'a+') as f:
         f.write(text)
         
@@ -159,7 +162,10 @@ def check_for_md_file():
     if os.path.exists('file.md'):
         os.remove('file.md')
 
-
+def printContent():
+    with open('file.md', 'r') as f:
+            content = f.read()
+            print(content)
 
 def main():
     check_for_md_file()
@@ -180,9 +186,12 @@ def main():
     createTheUrl()
     chooseALink()
     print()
-    print(colored('         *** CONTENT IS SAVED IN file.md  ***', color='yellow',
+    printContent()
+    print(colored('         *** CONTENT IS ALSO SAVED IN file.md  ***', color='yellow',
     on_color=None, attrs=['bold']))
     print()
+    
+   
     
     
     
