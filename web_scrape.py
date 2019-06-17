@@ -43,7 +43,7 @@ def createTheUrl():
         href_link = one_at_a_time['href']
         href_url = 'https://clbokea.github.io/exam/' + href_link
         assignment_url.append(href_url)
-   
+
 def chooseALink():
 
     print(colored('    Here are the list of projects for ComputerScience 4th Semester',color='yellow', on_color=None, attrs=['bold']))

@@ -16,10 +16,17 @@ pip install -r requirements.txt
 
 ## Usage
 
-```
+After you run the project, 
+1) You can then enter a desired number,
+    From 1-4, which I set as int
+    If you also put any value, other than int.. it will throw a ValueError
+    Ask the number again, until it gets a match.
 
-
-```
+2)  After this, the program will loop through all the contents,
+3)  Print the desired content I setted
+4)  And save it to a markdown file.
+5)  The program will also print the contents in the terminal,
+    So you don't need to check the mardown file.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
