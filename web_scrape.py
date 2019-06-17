@@ -57,7 +57,7 @@ def chooseALink():
 
 #using the input method, when n is entered
 #it will then match to the link's index
-#handling the error using a print method
+#handling the error
 #when the enterd value doesnt match, the program asks again.
     while True:
         try:
