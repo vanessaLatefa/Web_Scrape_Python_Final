@@ -1,5 +1,5 @@
 #Importing.. searches for the named module, 
-#creates a reference to that module in this namespace
+#creates a reference to that module in this file
 # Since we are importing,
 # we can access and make use of their libraries, 
 # which are a bunch of code designed by other people.
