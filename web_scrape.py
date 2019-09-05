@@ -68,17 +68,21 @@ def chooseALink():
         if n == 1:
             assign_link = assignment_url[0]
             scrapeMe(assign_link) 
+            break
         elif n == 2:
             assign_link = assignment_url[1]
             scrapeMe2(assign_link)
+            break
         elif n == 3:
             assign_link = assignment_url[2]
             scrapeMe2(assign_link)
+            break
         elif n == 4:
             assign_link = assignment_url[3]
             scrapeMe(assign_link)
+            break
         else:
-            print()
+            print("Sorry! options are only 1,2,3 or 4")
         
         
 
